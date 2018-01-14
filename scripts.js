@@ -41,7 +41,7 @@ $($playButton).click(function () {
     $("#target-letter").text($letter);
     $(document).keypress(function (e) {
         if (e.which == $sentences[0].charCodeAt(0)) {
-            $highlightPosition += 20;
+            $highlightPosition += 21;
             $($highlight).css("margin-left", $highlightPosition + "px");
         }
     });
