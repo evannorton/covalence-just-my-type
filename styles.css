@@ -16,6 +16,10 @@
     height: 15px;
     background-color: yellow;
   }
+
+  #keyboard-upper-container {
+      display: none;
+  }
   
   .keyboard-container {
     margin-top: 200px;
