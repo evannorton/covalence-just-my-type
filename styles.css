@@ -7,7 +7,7 @@
     position: relative;
     left: 10px;
     top: 10px;
-    font-size: 2em;
+    font-size: 30px;
   }
   
   #prompt-container {
@@ -23,13 +23,20 @@
   #yellow-block {
     position: absolute;
     margin-top: 10px;
-    width: 15px;
-    height: 15px;
+    margin-left: 0px;
+    width: 20px;
+    height: 30px;
     background-color: yellow;
+    padding: 0;
   }
 
   #keyboard-upper-container {
       display: none;
+  }
+
+  #sentence {
+    top: 6px;
+    font-size: 30px;
   }
   
   .keyboard-container {
