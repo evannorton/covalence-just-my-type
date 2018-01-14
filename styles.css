@@ -2,11 +2,22 @@
     margin: 0;
     padding: 0;	
   }
+
+  #play-button {
+    position: relative;
+    left: 10px;
+    top: 10px;
+    font-size: 2em;
+  }
   
   #prompt-container {
     font-family: Courier New, Courier, monospace;
     font-size: 24px;
     letter-spacing: 3px;
+  }
+
+  #target {
+    display: none;
   }
   
   #yellow-block {
