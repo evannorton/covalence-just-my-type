@@ -10,6 +10,7 @@ let $sentenceNumber = 0;
 let $sentence = $sentences[$sentenceNumber];
 let $charNumber = 0;
 let $letter = $sentence.substring($charNumber, $charNumber + 1);
+let $mistakes = 0;
 
 //load page with button
 $($playButton).click(function () {
@@ -40,7 +41,8 @@ $($playButton).click(function () {
     });
 
     //typing test
-
+    let $startDate = new Date();
+    let $startTime = $startDate.getTime();
     $("#sentence").text($sentence);
     $("#target-letter").text($letter);
     $(document).keypress(function (e) {
@@ -56,7 +58,11 @@ $($playButton).click(function () {
             if ($charNumber === $sentence.length) {
                 $sentenceNumber++;
                 if ($sentenceNumber === $sentences.length) {
-                    console.log("done");
+                    let $endDate = new Date();
+                    let $endTime = $endDate.getTime();
+                    let $minutes = ($endTime - $startTime) / 60000;
+                    $wpm = Math.round(54 / $minutes - 2 * $mistakes);
+                    alert("You type " + $wpm + " words per minute.");
                 } else {
                     $sentence = $sentences[$sentenceNumber];
                     $("#sentence").text($sentence);
@@ -72,6 +78,7 @@ $($playButton).click(function () {
             let $wrong = $("<span>✗</span>");
             $($wrong).addClass('red');
             $($wrong).appendTo("#feedback");
+            $mistakes++;
         }
     });
 });
