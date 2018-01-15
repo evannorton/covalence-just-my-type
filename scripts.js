@@ -45,6 +45,9 @@ $($playButton).click(function () {
     $("#target-letter").text($letter);
     $(document).keypress(function (e) {
         if (e.which == $sentences[$sentenceNumber].charCodeAt($charNumber)) {
+            let $right = $("<span>✔</span>");
+            $($right).addClass('green');
+            $($right).appendTo("#feedback");
             $highlightPosition += 21;
             $($highlight).css("margin-left", $highlightPosition + "px");
             $charNumber++;
@@ -62,8 +65,13 @@ $($playButton).click(function () {
                     $("#target-letter").text($letter);
                     $highlightPosition = 0;
                     $($highlight).css("margin-left", $highlightPosition + "px");
+                    $("#feedback").text("");
                 }
             }
+        } else {
+            let $wrong = $("<span>✗</span>");
+            $($wrong).addClass('red');
+            $($wrong).appendTo("#feedback");
         }
     });
 });

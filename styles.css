@@ -55,11 +55,19 @@
   #feedback {
     font-size: 20px;
   }
-  
+
   .glyphicon-ok {
     color: #1DA237
   }
   
   .glyphicon-remove {
     color : #CD2626
+  }
+
+  .green {
+    color: green;
+  }
+  
+  .red {
+    color: red;
   }
