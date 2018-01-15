@@ -11,6 +11,9 @@ let $sentence = $sentences[$sentenceNumber];
 let $charNumber = 0;
 let $letter = $sentence.substring($charNumber, $charNumber + 1);
 let $mistakes = 0;
+let $isTimeCounting = false;
+let $startDate;
+let $startTime;
 
 //load page with button
 $($playButton).click(function () {
@@ -55,8 +58,11 @@ $($playButton).click(function () {
     //read for keypress
     $(document).keypress(function (e) {
         //set start time
-        let $startDate = new Date();
-        let $startTime = $startDate.getTime();
+        if ($isTimeCounting === false) {
+            $startDate = new Date();
+            $startTime = $startDate.getTime();
+            $isTimeCounting = true;
+        }
         //if pressed key == desired key
         if (e.which == $sentences[$sentenceNumber].charCodeAt($charNumber)) {
             //make a green checkmark
