@@ -18,7 +18,7 @@ let $startTime;
 //load page with button
 $($playButton).click(function () {
     $($content).css("display", "block");
-    $($playButton).css("display", "none");
+    $("#menu").css("display", "none");
 
     //read for keydown
     $(document).keydown(function (e1) {

@@ -5,18 +5,32 @@
 
   body {
     background-image: url("https://i.imgur.com/2PxpGQb.jpg");
+    width: 100%';'
+  }
+
+  h1 {
+    font-family: Georgia,Times,Times New Roman,serif; 
+    font-size: 8em;
+  }
+
+  #btn-row {
+    margin-top: 5em;
   }
 
   #play-button {
-    font-size: 10em;
+    font-size: 300%;
     display: block;
     position: relative;
     left: 40%;
     width: 20%;
   }
 
-  #btn-container {
-    margin-top: 10em;
+  #menu {
+    margin-top: 3em;
+    padding-bottom: 3em;
+    margin-right: 20%;
+    margin-left: 20%;
+    background-color: rgba(255, 255, 255, 0.25);
   }
   
   #prompt-container {
@@ -50,7 +64,7 @@
   }
   
   .keyboard-container {
-    margin-top: 200px;
+    margin-top: 10em;
   }
   
   #target-letter {
@@ -61,17 +75,13 @@
     margin-top: 40px;
     padding: 10px 0;
   }
+
+  .menu-row {
+    margin: 0;
+  }
   
   #feedback {
     font-size: 20px;
-  }
-
-  .glyphicon-ok {
-    color: #1DA237
-  }
-  
-  .glyphicon-remove {
-    color : #CD2626
   }
 
   .green {
