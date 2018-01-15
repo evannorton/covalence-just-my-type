@@ -48,15 +48,15 @@ $($playButton).click(function () {
         });
     });
 
-    //set start time
-    let $startDate = new Date();
-    let $startTime = $startDate.getTime();
     //show current sentence on screen
     $("#sentence").text($sentence);
     //show target letter on screen
     $("#target-letter").text($letter);
     //read for keypress
     $(document).keypress(function (e) {
+        //set start time
+        let $startDate = new Date();
+        let $startTime = $startDate.getTime();
         //if pressed key == desired key
         if (e.which == $sentences[$sentenceNumber].charCodeAt($charNumber)) {
             //make a green checkmark
