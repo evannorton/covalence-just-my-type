@@ -5,6 +5,11 @@ let $highlight = $("#yellow-block");
 let $highlightPosition = 0;
 let $keyUpper = $("#keyboard-upper-container");
 let $keyLower = $("#keyboard-lower-container");
+let $sentences = ['ten ate neite ate nee enet ite ate inet ent eate', 'Too ato too nOt enot one totA not anot tOO aNot', 'oat itain oat tain nate eate tea anne inant nean', 'itant eate anot eat nato inate eat anot tain eat', 'nee ene ate ite tent tiet ent ine ene ete ene ate'];
+let $sentenceNumber = 0;
+let $sentence = $sentences[$sentenceNumber];
+let $charNumber = 0;
+let $letter = $sentence.substring($charNumber, $charNumber + 1);
 
 //load page with button
 $($playButton).click(function () {
@@ -35,11 +40,6 @@ $($playButton).click(function () {
     });
 
     //typing test
-    let $sentences = ['ten ate neite ate nee enet ite ate inet ent eate', 'Too ato too nOt enot one totA not anot tOO aNot', 'oat itain oat tain nate eate tea anne inant nean', 'itant eate anot eat nato inate eat anot tain eat', 'nee ene ate ite tent tiet ent ine ene ete ene ate'];
-    let $sentenceNumber = 0;
-    let $sentence = $sentences[$sentenceNumber];
-    let $charNumber = 0;
-    let $letter = $sentence.substring($charNumber, $charNumber + 1);
 
     $("#sentence").text($sentence);
     $("#target-letter").text($letter);
@@ -48,8 +48,22 @@ $($playButton).click(function () {
             $highlightPosition += 21;
             $($highlight).css("margin-left", $highlightPosition + "px");
             $charNumber++;
-            let $letter = $sentence.substring($charNumber, $charNumber + 1);
+            $letter = $sentence.substring($charNumber, $charNumber + 1);
             $("#target-letter").text($letter);
+            if ($charNumber === $sentence.length) {
+                $sentenceNumber++;
+                if ($sentenceNumber === $sentences.length) {
+                    console.log("done");
+                } else {
+                    $sentence = $sentences[$sentenceNumber];
+                    $("#sentence").text($sentence);
+                    $charNumber = 0;
+                    $letter = $sentence.substring($charNumber, $charNumber + 1);
+                    $("#target-letter").text($letter);
+                    $highlightPosition = 0;
+                    $($highlight).css("margin-left", $highlightPosition + "px");
+                }
+            }
         }
     });
 });
