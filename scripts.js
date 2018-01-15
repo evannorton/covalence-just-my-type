@@ -62,7 +62,12 @@ $($playButton).click(function () {
                     let $endTime = $endDate.getTime();
                     let $minutes = ($endTime - $startTime) / 60000;
                     $wpm = Math.round(54 / $minutes - 2 * $mistakes);
-                    alert("You type " + $wpm + " words per minute.");
+                    var r = confirm("You type " + $wpm + " words per minute. Would you like to try again?");
+                    if (r == true) {
+                        location.reload();
+                    } else {
+                        console.log("done.");
+                    }
                 } else {
                     $sentence = $sentences[$sentenceNumber];
                     $("#sentence").text($sentence);
