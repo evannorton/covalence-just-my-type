@@ -1,5 +1,4 @@
 # Just My Type
-Covalence
 
 ## Info
 * You are going to build a typing game
